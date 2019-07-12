@@ -1,5 +1,5 @@
 swagger: '2.0'
-nfo:
+info:
   version: '1.0'
   title: Example API
   license:

@@ -1,0 +1,17 @@
+node {
+   stage('Get source code') {
+      git url: 'https://github.com/rgreisemer-contino/Dredd-Example.git', branch: 'master'
+   }
+   stage('Install Deps') {
+         sh 'node -v'
+         sh 'npm -v'
+         sh 'npm install'
+      
+   }
+   stage('Test OpenAPI 2') {
+
+          sh 'node app.js &'
+          sh 'dredd api-description.yml http://127.0.0.1:3000'
+         
+   }
+}
